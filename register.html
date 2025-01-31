@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التسجيل</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .btn-red {
+            background-color: red;
+            color: white;
+            border: none;
+        }
+
+        .btn-red:hover {
+            background-color: darkred;
+        }
+
+        .footer {
+            background-color: black;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: #ff4d4d;
+        }
+
+        .invalid-feedback {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar bg-dark navbar-expand-lg">
+        <div class="container-fluid justify-content-end">
+            <a class="navbar-brand text-white me-2" href="#">السجل المدني المصري</a>
+            <a class="navbar-brand text-white" href="#">
+                <img src="WhatsApp_Image_2025-01-20_at_19.47.00_c636ea44-removebg-preview.png" alt="Logo" width="90"
+                    height="80" class="d-inline-block align-text-top">
+            </a>
+        </div>
+    </nav>
+
+    <div class="container my-5 text-end">
+        <h2 class="text-center mb-4">تسجيل الدخول</h2>
+        <form id="registrationForm">
+            <!-- الاسم الكامل -->
+            <div class="mb-3">
+                <label for="fullName" class="form-label">الاسم الكامل</label>
+                <input type="text" class="form-control text-end" id="fullName" placeholder="ادخل اسمك الكامل">
+            </div>
+            <!-- الرقم القومي -->
+            <div class="mb-3">
+                <label for="nationalID" class="form-label">الرقم القومي</label>
+                <input type="text" class="form-control text-end" id="nationalID" placeholder="ادخل الرقم القومي" maxlength="14">
+                <div class="invalid-feedback">
+                    يجب إدخال الرقم القومي مكون من 14 رقماً.
+                </div>
+            </div>
+            <!-- البريد الإلكتروني -->
+            <div class="mb-3">
+                <label for="email" class="form-label">البريد الإلكتروني</label>
+                <input type="email" class="form-control text-end" id="email" placeholder="ادخل بريدك الإلكتروني">
+            </div>
+            <!-- كلمة السر -->
+            <div class="mb-3">
+                <label for="password" class="form-label">كلمة السر</label>
+                <input type="password" class="form-control text-end" id="password" placeholder="كلمة السر">
+            </div>
+            <!-- زر الإرسال -->
+            <div class="text-center">
+                <button type="submit" class="btn btn-red px-4 py-2">تسجيل</button>
+            </div>
+        </form>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Egypt's Digital Citizen ID. All Rights Reserved.</p>
+            <p>
+                <a href="#privacy">Privacy Policy</a> |
+                <a href="#terms">Terms of Service</a> |
+                <a href="#contact">Contact Us</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            var nationalID = document.getElementById('nationalID').value;
+            var nationalIDRegex = /^\d{14}$/; // Regex to match exactly 14 digits
+
+            if (!nationalIDRegex.test(nationalID)) {
+                document.getElementById('nationalID').classList.add('is-invalid');
+            } else {
+                document.getElementById('nationalID').classList.remove('is-invalid');
+                // If the ID is valid, you can submit the form or perform other actions.
+                alert('تم التسجيل بنجاح');
+                window.location.href = "index.html";
+                // Here you can proceed with form submission or further processing.
+            }
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

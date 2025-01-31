@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الهوية الشخصية</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .btn-red {
+            background-color: red;
+            color: white;
+            border: none;
+        }
+
+        .btn-red:hover {
+            background-color: darkred;
+        }
+
+        .footer {
+            background-color: black;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: #ff4d4d;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar bg-dark navbar-expand-lg">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto align-items-center">
+                    <!-- Bell icon -->
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white"
+                                class="bi bi-bell" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4 4 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4 4 0 0 0-3.203-3.92zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5 5 0 0 1 13 6c0 .88.32 4.2 1.22 6" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="index.html">من نحن</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="index.html">الرئيسية</a>
+                    </li>
+                </ul>
+            </div>
+            <a class="navbar-brand text-white" href="#">السجل المدني المصري</a>
+            <a class="navbar-brand text-white" href="#">
+                <img src="WhatsApp_Image_2025-01-20_at_19.47.00_c636ea44-removebg-preview.png" alt="Logo" width="90"
+                    height="80" class="d-inline-block align-text-top">
+            </a>
+        </div>
+    </nav>
+    </head>
+
+    <body>
+        <div class="container mt-5">
+            <h2 class="text-center mb-4">الهوية الشخصية</h2>
+            <form>
+                <div class="mb-3  text-end">
+                    <label for="identityType" class="form-label">نوع الخدمة</label>
+                    <select id="identityType" class="form-select text-end">
+                        <option value="" selected disabled>اختر نوع الخدمة</option>
+                        <option value="card">بطاقة</option>
+                        <option value="birth_certificate">جواز سفر</option>
+                    </select>
+                </div>
+
+                <!-- Fields for Card -->
+                <div id="cardFields" class="d-none">
+                    <h4 class="mt-3 text-center">بيانات البطاقة</h4>
+                    <div class="mb-3 text-end">
+                        <label for="fullName" class="form-label"> الاسم بالكامل </label>
+                        <input type="text" class="form-control text-end" id="fullName" placeholder="الاسم بالكامل"
+                            required>
+                    </div>
+                    <div class="mb-3 text-end">
+                        <label for="cardNumber" class="form-label">الرقم القومي</label>
+                        <input type="text" id="cardNumber" class="form-control text-end" placeholder="أدخل الرقم القومي"
+                            maxlength="14" required>
+                        <div id="cardNumberError" class="text-danger" style="display:none;">الرقم القومي يجب أن يتكون من
+                            14 رقمًا فقط.</div>
+                    </div>
+
+                    <div class="mb-3 text-end">
+                        <label for="address" class="form-label">العنوان</label>
+                        <input type="text" id="address" class="form-control text-end" placeholder="أدخل العنوان">
+                    </div>
+                    <div class="mb-3 text-end">
+                        <label for="job" class="form-label">الوظيفة</label>
+                        <input type="text" id="job" class="form-control text-end" placeholder="أدخل الوظيفة">
+                    </div>
+                    <div class="mb-3 text-end">
+                        <label for="maritalStatus" class="form-label">الحالة الاجتماعية</label>
+                        <select id="maritalStatus" class="form-select text-end">
+                            <option value="" selected disabled>اختر الحالة الاجتماعية</option>
+                            <option value="single">أعزب</option>
+                            <option value="married">متزوج</option>
+                            <option value="divorced">مطلق</option>
+                            <option value="widowed">أرمل</option>
+                        </select>
+                    </div>
+                    <div class="mb-3 text-end">
+                        <label for="gender" class="form-label">الديانة</label>
+                        <select id="gender" class="form-select text-end">
+                            <option value="" selected disabled>اختر</option>
+                            <option value="muslim">مسلم</option>
+                            <option value="christian">مسيحي</option>
+                        </select>
+                    </div>
+                    <div class="mb-3 text-end">
+                        <label for="gender" class="form-label">النوع</label>
+                        <select id="gender" class="form-select text-end">
+                            <option value="" selected disabled>اختر النوع</option>
+                            <option value="male">ذكر</option>
+                            <option value="female">أنثى</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Fields for Birth Certificate -->
+                <div id="birthCertificateFields" class="d-none">
+                    <h4 class="mt-3 text-center">بيانات جواز السفر</h4>
+                    <div class="mb-3 text-end">
+                        <label for="fullName" class="form-label"> الاسم بالكامل </label>
+                        <input type="text" class="form-control text-end" id="fullName" placeholder="الاسم بالكامل"
+                            required>
+                    </div>
+                    <div class="mb-3 text-end">
+                        <label for="cardNumber" class="form-label">الرقم القومي</label>
+                        <input type="text" id="cardNumber" class="form-control text-end" placeholder="أدخل الرقم القومي"
+                            maxlength="14" required>
+                        <div id="cardNumberError" class="text-danger" style="display:none;">الرقم القومي يجب أن يتكون من
+                            14 رقمًا فقط.</div>
+                    </div>
+                    <div class="mb-3 text-end">
+                        <label for="birthDate" class="form-label">تاريخ الميلاد</label>
+                        <input type="date" id="birthDate" class="form-control text-end">
+                    </div>
+                    <div class="mb-3 text-end">
+                        <label for="birthPlace" class="form-label">محل الميلاد</label>
+                        <input type="text" id="birthPlace" class="form-control text-end"
+                            placeholder="أدخل مكان الميلاد">
+                    </div>
+                    <div class="mb-3 text-end">
+                        <label for="job" class="form-label">الوظيفة</label>
+                        <input type="text" id="job" class="form-control text-end" placeholder="أدخل الوظيفة">
+                    </div>
+                    <div class="mb-3 text-end">
+                        <label for="address" class="form-label">العنوان</label>
+                        <input type="text" id="address" class="form-control text-end" placeholder="أدخل العنوان">
+                    </div>
+                    <div class="mb-3 text-end">
+                        <label for="gender" class="form-label">النوع</label>
+                        <select id="gender" class="form-select text-end">
+                            <option value="" selected disabled>اختر النوع</option>
+                            <option value="male">ذكر</option>
+                            <option value="female">أنثى</option>
+                        </select>
+                    </div>
+                    <div class="mb-3 text-end">
+                        <label for="gender" class="form-label">الديانة</label>
+                        <select id="gender" class="form-select text-end">
+                            <option value="" selected disabled>اختر</option>
+                            <option value="muslim">مسلم</option>
+                            <option value="christian">مسيحي</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="text-center mt-3">
+                    <button type="submit" class="btn btn-danger" style="margin-bottom: 20px;">إرسال</button>
+                </div>
+            </form>
+        </div>
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2025 Egypt's Digital Citizen ID. All Rights Reserved.</p>
+                <p>
+                    <a href="#privacy">Privacy Policy</a> |
+                    <a href="#terms">Terms of Service</a> |
+                    <a href="#contact">Contact Us</a>
+                </p>
+            </div>
+        </footer>
+        <script href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+        <script>
+            const identityType = document.getElementById('identityType');
+            const cardFields = document.getElementById('cardFields');
+            const birthCertificateFields = document.getElementById('birthCertificateFields');
+
+            identityType.addEventListener('change', () => {
+                if (identityType.value === 'card') {
+                    cardFields.classList.remove('d-none');
+                    birthCertificateFields.classList.add('d-none');
+                } else if (identityType.value === 'birth_certificate') {
+                    birthCertificateFields.classList.remove('d-none');
+                    cardFields.classList.add('d-none');
+                }
+            });
+        </script>
+    </body>
+</html>

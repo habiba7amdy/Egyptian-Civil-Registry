@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الرئيسية</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+<style>
+.hero-section {
+    position: relative;
+    height: 400px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(1738357384605.jpg);
+    background-repeat: no-repeat;
+
+    background-position: center;
+    filter: blur(15px); /* مستوى الضبابية */
+    z-index: -1; /* وضع الصورة في الخلف */
+}
+    .about-us {
+        padding: 50px 0;
+    }
+
+    .about-us img {
+        width: 100%;
+        /* Makes the image responsive */
+        max-width: 400px;
+        /* Max width for image */
+        height: auto;
+    }
+
+    .square {
+        width: 100%;
+        height: 200px;
+        background-color: red;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 1.2rem;
+        text-decoration: none;
+        border: 2px solid white;
+    }
+
+    .square:hover {
+        background-color: darkred;
+    }
+
+    #square3:hover,
+    #square4:hover {
+        content: "قريبا...";
+    }
+
+
+
+    .footer {
+        background-color: black;
+        color: white;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    .footer a {
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    .footer a:hover {
+        color: #ff4d4d;
+    }
+</style>
+
+<body>
+    <nav class="navbar bg-dark navbar-expand-lg">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto align-items-center">
+                    <!-- Bell icon -->
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white"
+                                class="bi bi-bell" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4 4 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4 4 0 0 0-3.203-3.92zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5 5 0 0 1 13 6c0 .88.32 4.2 1.22 6" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#featuers">الخدمات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#about-us">من نحن</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">الرئيسية</a>
+                    </li>
+                </ul>
+            </div>
+            <a class="navbar-brand text-white" href="#">السجل المدني المصري</a>
+            <a class="navbar-brand text-white" href="#">
+                <img src="WhatsApp_Image_2025-01-20_at_19.47.00_c636ea44-removebg-preview.png" alt="Logo" width="90"
+                    height="80" class="d-inline-block align-text-top">
+            </a>
+        </div>
+    </nav>
+    <section class="hero-section">
+        <div>
+            <h1 class="display-3 text-dark"> السجل المدني المصري</h1>
+            <p class="lead display-6 text-dark">سعيدون جدا بخدمتكم</p>
+            <a href="register.html" class="btn btn-danger btn-lg" style="font-size: 20px;">التسجيل</a>
+
+        </div>
+    </section>
+    <section class="about-us container" id="about-us">
+        <div class="row align-items-center">
+            <!-- Image on the left -->
+            <div class="col-md-6">
+                <img src="WhatsApp Image 2025-01-20 at 21.02.36_44ca8a96.jpg" alt="About Us Image" class="img-fluid">
+            </div>
+            <!-- Paragraph on the right -->
+            <div class="col-md-6 text-end fs-4">
+                <h2 class="fw-bold">من نحن</h2>
+                <p>
+                    نحن فريق مبتكر نسعى لتسهيل حياة المواطنين من خلال التحول الرقمي. نقدم حلاً يهدف إلى رقمنة المستندات
+                    الرسمية للمصريين، مما يعزز الوصول إليها بكفاءة وسرعة. نسعى لتبسيط الإجراءات الحكومية وتقليل الوقت
+                    والجهد والتكلفة اللازمة للتعامل مع المصالح الحكومية، مع التركيز على تقديم تجربة مريحة وميسرة للجميع
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="container my-5" id="featuers">
+        <div class="row g-3">
+            <!-- Square 1 -->
+            <div class="col-md-6">
+                <a href="certificateform.html" class="square" style="font-size: 25px;">الشهادات الحكومية</a>
+            </div>
+            <!-- Square 2 -->
+            <div class="col-md-6">
+                <a href="personform.html" class="square" style="font-size: 25px;">الهوية الشخصية</a>
+            </div>
+            <!-- Square 3 -->
+            <div class="col-md-6">
+                <a class="square" id="square3" style="font-size: 25px;">السجلات الصحية</a>
+            </div>
+            <!-- Square 4 -->
+            <div class="col-md-6">
+                <a class="square" id="square4" style="font-size: 25px;">الشهادات العلمية</a>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Egypt's Digital Citizen ID. All Rights Reserved.</p>
+            <p>
+                <a href="#privacy">Privacy Policy</a> |
+                <a href="#terms">Terms of Service</a> |
+                <a href="#contact">Contact Us</a>
+            </p>
+        </div>
+    </footer>
+    <script href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById("square3").addEventListener("mouseover", function () {
+            this.dataset.originalText = this.innerText; // Store original text
+            this.innerText = "...قريباً";
+        });
+    
+        document.getElementById("square3").addEventListener("mouseout", function () {
+            this.innerText = this.dataset.originalText; // Restore original text
+        });
+    
+        document.getElementById("square4").addEventListener("mouseover", function () {
+            this.dataset.originalText = this.innerText;
+            this.innerText = "...قريباً";
+        });
+    
+        document.getElementById("square4").addEventListener("mouseout", function () {
+            this.innerText = this.dataset.originalText;
+        });
+    </script>
+    
+</body>
+
+</html>
